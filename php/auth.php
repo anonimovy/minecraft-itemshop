@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 function handleRegistration($pdo, $data) {
-    // Walidacja danych
+
     if (empty($data['username']) || empty($data['email']) || empty($data['password'])) {
         echo json_encode(['success' => false, 'message' => 'Wszystkie pola są wymagane']);
         return;
@@ -32,7 +32,7 @@ function handleRegistration($pdo, $data) {
         return;
     }
     
-    // Sprawdź czy użytkownik już istnieje
+
     $stmt = $pdo->prepare("SELECT id FROM users WHERE username = ? OR email = ?");
     $stmt->execute([$data['username'], $data['email']]);
     
@@ -41,10 +41,10 @@ function handleRegistration($pdo, $data) {
         return;
     }
     
-    // Hashowanie hasła
+
     $hashedPassword = password_hash($data['password'], PASSWORD_DEFAULT);
     
-    // Dodanie użytkownika do bazy
+
     $stmt = $pdo->prepare("INSERT INTO users (username, email, password, created_at) VALUES (?, ?, ?, NOW())");
     $stmt->execute([$data['username'], $data['email'], $hashedPassword]);
     
@@ -52,7 +52,7 @@ function handleRegistration($pdo, $data) {
 }
 
 function handleLogin($pdo, $data) {
-    // Znajdź użytkownika po nazwie lub emailu
+
     $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ? OR email = ?");
     $stmt->execute([$data['username'], $data['username']]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -62,7 +62,7 @@ function handleLogin($pdo, $data) {
         return;
     }
     
-    // Ustaw sesję
+
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['username'] = $user['username'];
     $_SESSION['email'] = $user['email'];

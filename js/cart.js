@@ -113,7 +113,7 @@ class Cart {
         totalElement.textContent = total.toFixed(2) + ' zł';
         checkoutBtn.disabled = false;
         
-        // Dodaj event listeners do przycisków
+
         document.querySelectorAll('.minus-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const itemId = parseInt(e.target.closest('.cart-item').dataset.id);
@@ -166,14 +166,14 @@ class Cart {
     }
 }
 
-// Inicjalizacja koszyka
+
 const cart = new Cart();
 
-// Funkcja do dodawania produktów do koszyka (używana na stronie produktów)
+
 function addToCart(product) {
     cart.addItem(product);
     
-    // Pokazuj powiadomienie
+
     const toast = document.createElement('div');
     toast.className = 'position-fixed bottom-0 end-0 p-3';
     toast.style.zIndex = '11';

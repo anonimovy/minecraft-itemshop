@@ -3,7 +3,7 @@ require_once 'config.php';
 
 header('Content-Type: application/json');
 
-// Pobierz produkty z bazy danych
+
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     try {
         $category = isset($_GET['category']) ? $_GET['category'] : null;

@@ -1,4 +1,4 @@
-// Rejestracja
+
 document.getElementById('registerForm')?.addEventListener('submit', async function(e) {
     e.preventDefault();
     
@@ -36,7 +36,7 @@ document.getElementById('registerForm')?.addEventListener('submit', async functi
     }
 });
 
-// Logowanie
+
 document.getElementById('loginForm')?.addEventListener('submit', async function(e) {
     e.preventDefault();
     

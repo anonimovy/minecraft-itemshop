@@ -2,14 +2,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('themeToggle');
     const htmlElement = document.documentElement;
     
-    // Sprawdź zapisany tryb w localStorage
+
     const savedTheme = localStorage.getItem('theme') || 'light';
     
-    // Ustaw początkowy tryb
+
     htmlElement.setAttribute('data-bs-theme', savedTheme);
     updateButtonIcon(savedTheme);
     
-    // Obsługa przycisku z animacją
+
     themeToggle.addEventListener('click', function() {
         this.classList.add('animate__animated', 'animate__rubberBand');
         

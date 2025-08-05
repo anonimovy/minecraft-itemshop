@@ -3,19 +3,19 @@ require_once 'config.php';
 
 header('Content-Type: application/json');
 
-// Sekretny klucz do weryfikacji
+
 define('API_KEY', 'twoj_sekretny_klucz');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);
     
-    // Weryfikacja klucza API
+
     if (!isset($data['api_key']) || $data['api_key'] !== API_KEY) {
         echo json_encode(['success' => false, 'message' => 'Nieprawidłowy klucz API']);
         exit;
     }
     
-    // Przetwarzanie zamówienia
+
     try {
         $stmt = $pdo->prepare("INSERT INTO minecraft_orders (player_uuid, player_name, product_id, executed) VALUES (?, ?, ?, 0)");
         $stmt->execute([$data['uuid'], $data['username'], $data['product_id']]);

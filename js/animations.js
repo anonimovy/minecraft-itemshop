@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Animacje przycisków "Dodaj do koszyka"
+
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Animacja przycisku
+
             this.classList.add('animate__animated', 'animate__rubberBand');
             this.innerHTML = '<i class="fas fa-check me-1"></i> Dodano';
             
-            // Aktualizacja licznika koszyka
+
             const cartCount = document.getElementById('cartCount');
             if (cartCount) {
                 cartCount.textContent = parseInt(cartCount.textContent) + 1;
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Efekt paralaksy dla sekcji hero
+
     const heroSection = document.querySelector('.hero-section');
     if (heroSection) {
         window.addEventListener('scroll', function() {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Leniwe ładowanie obrazków
+
     if ('IntersectionObserver' in window) {
         const lazyImages = document.querySelectorAll('img.lazy');
         
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         lazyImages.forEach(img => imageObserver.observe(img));
     }
 
-    // Animacja hover dla kart
+
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Inicjalizacja tooltipów Bootstrap z animacją
+
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl, {

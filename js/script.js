@@ -1,4 +1,4 @@
-// Inicjalizacja koszyka
+
 class Cart {
     constructor() {
         this.items = JSON.parse(localStorage.getItem('cart')) || [];
@@ -31,9 +31,9 @@ class Cart {
 
 const cart = new Cart();
 
-// Podstawowe funkcje
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicjalizacja tooltipów
+
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl);
