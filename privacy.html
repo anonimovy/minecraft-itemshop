@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pl" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polityka prywatności - ColorSHOP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Nagłówek (taki sam jak w index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-store me-2"></i>ColorSHOP
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i> Strona główna
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">
+                            <i class="fas fa-shopping-bag me-1"></i> Sklep
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rules.html">
+                            <i class="fas fa-file-alt me-1"></i> Regulamin
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="privacy.html">
+                            <i class="fas fa-shield-alt me-1"></i> Polityka prywatności
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="cart.html">
+                            <i class="fas fa-shopping-cart me-1"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button id="themeToggle" class="btn btn-outline-light me-2" title="Zmień motyw">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i> Konto
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-in-alt me-2"></i>Logowanie</a></li>
+                            <li><a class="dropdown-item" href="register.html"><i class="fas fa-user-plus me-2"></i>Rejestracja</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Zawartość strony -->
+    <main class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                            <h2 class="mb-0"><i class="fas fa-shield-alt me-2"></i>Polityka prywatności</h2>
+                        </div>
+                        <div class="card-body">
+                            <article class="article-content">
+                                <h3 class="h4 mt-4"><i class="fas fa-database me-2"></i>Gromadzenie danych</h3>
+                                <p>Gromadzimy następujące dane:</p>
+                                <ul>
+                                    <li>Nazwa użytkownika Minecraft</li>
+                                    <li>Adres e-mail</li>
+                                    <li>Historia transakcji</li>
+                                    <li>Adres IP</li>
+                                </ul>
+
+                                <h3 class="h4 mt-5"><i class="fas fa-lock me-2"></i>Bezpieczeństwo danych</h3>
+                                <p>Twoje dane są chronione poprzez:</p>
+                                <ul>
+                                    <li>Szyfrowanie połączenia (SSL)</li>
+                                    <li>Bezpieczne serwery</li>
+                                    <li>Ograniczony dostęp do danych</li>
+                                </ul>
+
+                                <h3 class="h4 mt-5"><i class="fas fa-cookie me-2"></i>Pliki cookies</h3>
+                                <p>Strona korzysta z plików cookies w celu:</p>
+                                <ul>
+                                    <li>Zapamiętania preferencji użytkownika</li>
+                                    <li>Utrzymania sesji logowania</li>
+                                    <li>Analizy ruchu na stronie</li>
+                                </ul>
+
+                                <div class="alert alert-info mt-5">
+                                    <i class="fas fa-info-circle me-2"></i>Masz prawo do żądania dostępu, poprawienia lub usunięcia swoich danych.
+                                </div>
+                            </article>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Ostatnia aktualizacja: 01.01.2025
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Stopka (taka sama jak w index.html) -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5><i class="fas fa-store me-2"></i>ColorSHOP</h5>
+                    <p class="mb-0">Dostarczamy przedmioty na serwery Minecraft od 2025 roku.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5><i class="fas fa-link me-2"></i>Linki</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="rules.html" class="text-white"><i class="fas fa-file-alt me-2"></i>Regulamin</a></li>
+                        <li><a href="privacy.html" class="text-white"><i class="fas fa-shield-alt me-2"></i>Polityka prywatności</a></li>
+                        <li><a href="contact.html" class="text-white"><i class="fas fa-envelope me-2"></i>Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5><i class="fas fa-share-alt me-2"></i>Social Media</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-discord fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 ColorSHOP. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

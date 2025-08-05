@@ -1,0 +1,204 @@
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    --body-bg-light: #f8f9fa;
+    --body-bg-dark: #212529;
+    --card-bg-dark: #2c3034;
+    --footer-bg-dark: #1a1e21;
+    --text-dark: #212529;
+    --text-light: #f8f9fa;
+}
+
+/* Podstawowe style */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--body-bg-light);
+    color: var(--text-dark);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Animacje przycisków */
+.btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+}
+
+.btn:hover {
+    transform: translateY(-3px) translateZ(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(1px) translateZ(0);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0b5ed7, #0a58ca);
+}
+
+/* Efekt "pulsowania" */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn-pulse:hover {
+    animation: pulse 1.5s infinite;
+}
+
+/* Efekt "wypełniania" */
+.btn-fill {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-fill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: width 0.4s ease;
+    z-index: -1;
+}
+
+.btn-fill:hover::before {
+    width: 100%;
+}
+
+/* Animacje kart */
+.card {
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform: translateZ(0);
+}
+
+.card:hover {
+    transform: translateY(-8px) translateZ(0);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.08);
+}
+
+.category-card img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Animacje nagłówka */
+.navbar {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.nav-link {
+    transition: all 0.2s ease;
+}
+
+/* Hero section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/minecraft-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-top: -56px;
+    padding-top: 56px;
+    transition: background-position 0.5s ease;
+}
+
+/* Ikony społecznościowe */
+.social-icons a {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px) scale(1.2);
+}
+
+.social-icons a:nth-child(1):hover { color: #3b5998 !important; }
+.social-icons a:nth-child(2):hover { color: #5865F2 !important; }
+.social-icons a:nth-child(3):hover { color: #FF0000 !important; }
+.social-icons a:nth-child(4):hover { color: #1DA1F2 !important; }
+
+/* Stopka */
+footer {
+    background-color: var(--dark-color);
+    transition: background-color 0.3s ease;
+}
+
+footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color) !important;
+    text-decoration: underline;
+}
+
+/* Dark mode styles */
+[data-bs-theme="dark"] body {
+    background-color: var(--body-bg-dark);
+    color: var(--text-light);
+}
+
+[data-bs-theme="dark"] .hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/minecraft-bg.jpg');
+}
+
+[data-bs-theme="dark"] .card {
+    background-color: var(--card-bg-dark);
+    color: var(--text-light);
+}
+
+[data-bs-theme="dark"] footer {
+    background-color: var(--footer-bg-dark) !important;
+}
+
+/* Animacje ładowania */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .hero-section {
+        background-attachment: scroll;
+    }
+    
+    .btn:hover {
+        transform: none;
+    }
+    
+    .card:hover {
+        transform: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
